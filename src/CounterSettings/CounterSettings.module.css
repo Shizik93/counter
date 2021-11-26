@@ -1,0 +1,21 @@
+.counterSettings {
+    border: 5px solid #0066ff;
+    flex-direction: column;
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-start;
+    font-size: 20px;
+    text-align: center;
+    width: 300px;
+    height: 100px;
+}
+.error{
+    background-color: red;
+}
+.inputStyle{
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+
+
+}
