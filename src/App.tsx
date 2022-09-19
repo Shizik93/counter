@@ -9,6 +9,10 @@ import CounterSettings from './CounterSettings';
 import { IncValue, SetInitialValue, SetMaxValue, SetMode } from './reducer/reducer';
 import { AppRootType } from './state/store';
 
+const setLocalValue = (key: string, initialValue: number) => {
+  localStorage.setItem(key, JSON.stringify(initialValue));
+};
+
 const App = () => {
   const dispatch = useDispatch();
   const setMode = useSelector<AppRootType, boolean>(state => state.counter.setMode);
@@ -33,8 +37,8 @@ const App = () => {
     }
   }, [dispatch]);
   useEffect(() => {
-    localStorage.setItem('initValue', JSON.stringify(initialValue));
-    localStorage.setItem('maxValue', JSON.stringify(maxValue));
+    setLocalValue('initValue', initialValue);
+    setLocalValue('maxValue', maxValue);
   }, [initialValue, maxValue]);
   const setInc = () => {
     dispatch(IncValue(value + 1));
