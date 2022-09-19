@@ -36,10 +36,10 @@ const App = () => {
     localStorage.setItem('initValue', JSON.stringify(initialValue));
     localStorage.setItem('maxValue', JSON.stringify(maxValue));
   }, [initialValue, maxValue]);
-  const INC = () => {
+  const setInc = () => {
     dispatch(IncValue(value + 1));
   };
-  const InitValue = () => {
+  const setInitValue = () => {
     dispatch(SetInitialValue(initialValue));
     dispatch(IncValue(initialValue));
   };
@@ -55,7 +55,7 @@ const App = () => {
       {setMode ? <CounterSettings /> : <Counter maxValue={maxValue} value={value} />}
       <div className="container">
         {!setMode && (
-          <CustomButton disable={disableInc} callback={INC}>
+          <CustomButton disable={disableInc} callback={setInc}>
             +
           </CustomButton>
         )}
@@ -63,7 +63,7 @@ const App = () => {
           SET
         </CustomButton>
         {!setMode && (
-          <CustomButton disable={disableReset} callback={InitValue}>
+          <CustomButton disable={disableReset} callback={setInitValue}>
             RESET
           </CustomButton>
         )}

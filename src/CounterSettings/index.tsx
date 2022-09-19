@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SetInitialValue, SetMaxValue } from '../reducer/reducer';
 import { AppRootType } from '../state/store';
 
-import style from './counterSettings.module.css';
+import style from './counterSettings.module.scss';
 
 const CounterSettings = () => {
   const dispatch = useDispatch();

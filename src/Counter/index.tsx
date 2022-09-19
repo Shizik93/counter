@@ -1,6 +1,6 @@
 import React from 'react';
 
-import style from './counter.module.css';
+import style from './counter.module.scss';
 
 type CounterPropsType = {
   maxValue: number;
