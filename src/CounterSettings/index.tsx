@@ -24,7 +24,9 @@ const CounterSettings = () => {
   return (
     <div className={style.counterSettings}>
       <div className={style.inputStyle}>
-        <div>Max Value</div>
+        <div>
+          <span>Max Value</span>
+        </div>
         <div>
           <input
             className={startInput}
@@ -35,7 +37,9 @@ const CounterSettings = () => {
         </div>
       </div>
       <div className={style.inputStyle}>
-        <div>Start Value</div>
+        <div>
+          <span>Start Value</span>
+        </div>
         <input
           className={maxInput}
           onChange={ChangeInitValue}

@@ -52,21 +52,23 @@ const App = () => {
 
   return (
     <div className="App">
-      {setMode ? <CounterSettings /> : <Counter maxValue={maxValue} value={value} />}
-      <div className="container">
-        {!setMode && (
-          <CustomButton disable={disableInc} callback={setInc}>
-            +
+      <div className="wrapper">
+        {setMode ? <CounterSettings /> : <Counter maxValue={maxValue} value={value} />}
+        <div className="button_container">
+          {!setMode && (
+            <CustomButton disable={disableInc} callback={setInc}>
+              +
+            </CustomButton>
+          )}
+          <CustomButton disable={disableSet} setMode={setMode} callback={ChangeSetMode}>
+            SET
           </CustomButton>
-        )}
-        <CustomButton disable={disableSet} setMode={setMode} callback={ChangeSetMode}>
-          SET
-        </CustomButton>
-        {!setMode && (
-          <CustomButton disable={disableReset} callback={setInitValue}>
-            RESET
-          </CustomButton>
-        )}
+          {!setMode && (
+            <CustomButton disable={disableReset} callback={setInitValue}>
+              RESET
+            </CustomButton>
+          )}
+        </div>
       </div>
     </div>
   );
