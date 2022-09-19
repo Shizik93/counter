@@ -11,7 +11,11 @@ const initialState: initialStateType = {
   setMode: false,
 };
 
-type ReducerType = IncValueType | SetInitialValueType | SetModeType | SetMaxValueType;
+type ReducerType =
+  | ReturnType<typeof IncValue>
+  | ReturnType<typeof SetInitialValue>
+  | ReturnType<typeof SetMode>
+  | ReturnType<typeof SetMaxValue>;
 
 // eslint-disable-next-line default-param-last
 export const reducer = (state = initialState, action: ReducerType): initialStateType => {
@@ -40,7 +44,6 @@ export const IncValue = (value: number) => {
     value,
   } as const;
 };
-type IncValueType = ReturnType<typeof IncValue>;
 
 export const SetInitialValue = (value: number) => {
   return {
@@ -48,14 +51,12 @@ export const SetInitialValue = (value: number) => {
     value,
   } as const;
 };
-type SetInitialValueType = ReturnType<typeof SetInitialValue>;
 
 export const SetMode = () => {
   return {
     type: 'SET-MODE',
   } as const;
 };
-type SetModeType = ReturnType<typeof SetMode>;
 
 export const SetMaxValue = (maxValue: number) => {
   return {
@@ -63,4 +64,3 @@ export const SetMaxValue = (maxValue: number) => {
     maxValue,
   } as const;
 };
-type SetMaxValueType = ReturnType<typeof SetMaxValue>;
