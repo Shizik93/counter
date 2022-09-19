@@ -6,7 +6,7 @@ type CounterPropsType = {
   maxValue: number;
   value: number;
 };
-export const Counter = ({ maxValue, value }: CounterPropsType) => {
+const Counter = ({ maxValue, value }: CounterPropsType) => {
   const styleCounter =
     value === maxValue ? `${style.err} ${style.counter}` : style.counter;
 
@@ -16,3 +16,5 @@ export const Counter = ({ maxValue, value }: CounterPropsType) => {
     </div>
   );
 };
+
+export default Counter;

@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { CustomButton } from './Button/CustomButton';
-import { Counter } from './Counter/Counter';
-import { CounterSettings } from './CounterSettings/CounterSettings';
+import CustomButton from './Button';
+import Counter from './Counter';
+import CounterSettings from './CounterSettings';
 import { IncValue, SetInitialValue, SetMaxValue, SetMode } from './reducer/reducer';
 import { AppRootType } from './state/store';
 

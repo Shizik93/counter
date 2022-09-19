@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SetInitialValue, SetMaxValue } from '../reducer/reducer';
 import { AppRootType } from '../state/store';
 
-import style from './CounterSettings.module.css';
+import style from './counterSettings.module.css';
 
-export const CounterSettings = () => {
+const CounterSettings = () => {
   const dispatch = useDispatch();
   const maxValue = useSelector((state: AppRootType) => state.counter.maxValue);
   const initialValue = useSelector((state: AppRootType) => state.counter.initialValue);
@@ -46,3 +46,5 @@ export const CounterSettings = () => {
     </div>
   );
 };
+
+export default CounterSettings;

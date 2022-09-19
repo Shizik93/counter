@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-import style from './CustomButton.module.css';
+import style from './customButton.module.css';
 
 type DefaultButtonPropsType = DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -12,7 +12,7 @@ type CustomButtonPropsType = {
   callback: () => void;
   children: React.ReactNode;
 } & DefaultButtonPropsType;
-export const CustomButton = ({
+const CustomButton = ({
   setMode,
   disable,
   children,
@@ -31,3 +31,5 @@ export const CustomButton = ({
     </button>
   );
 };
+
+export default CustomButton;
